@@ -47,7 +47,7 @@ public class App {
                     case 1:
                         System.out.println("You've selected to find all stores:");
                         // TODO: Retrieve all stores using the storeHelper by replacing the Null assignment below
-                        queryResults = null;
+                        queryResults = storeHelper.findAll();
                         printResultRows(queryResults);
                         break;
                     case 2:
@@ -57,8 +57,9 @@ public class App {
                               Then retrieve all stores with the storeNumber by replacing the Null assignment below
                          */
 
+                        int number = scanner.nextInt();
 
-                        queryResults = null;
+                        queryResults = storeHelper.findByStoreNumber(number);
                         printResultRows(queryResults);
                         break;
                     case 3:
@@ -67,9 +68,9 @@ public class App {
                         TODO: Retrieve input from the user for the store type to be queried
                               Then retrieve all stores with the storeType by replacing the Null assignment below
                          */
+                        String type = scanner.nextLine();
 
-
-                        queryResults = null;
+                        queryResults = storeHelper.findByStoreType(type);
                         printResultRows(queryResults);
                         break;
                     case 4:
@@ -78,9 +79,10 @@ public class App {
                         TODO: Retrieve input from the user for the city, then prompt the user for the state
                               Then retrieve all stores within the city and state by replacing the Null assignment below
                          */
+                        String city = scanner.nextLine();
+                        String state = scanner.nextLine();
 
-
-                        queryResults = null;
+                        queryResults = storeHelper.findByCityAndState(city, state);
                         printResultRows(queryResults);
                         break;
                     case 5:
